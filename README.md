@@ -9,13 +9,13 @@
 
 << List team member names >>
 
-***
+*** Sam Lin
 
 ## Project Description
 
 << Give an overview of your project >>
 
-***    
+*** A 2D pixel base street fighter game that you would see in a aracade back in the day.
 
 ## GUI Design
 
@@ -31,11 +31,11 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. Count Down Before Games Begans
+2. moveable character
+3. Health Bar
+4. Game-Over Screen
+5. Level Sound Track
 
 ### Classes
 
