@@ -2,22 +2,20 @@
 
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << Project Title >>
-## CS110 Final Project  << Semester, Year >>
+# << CS110 Project >>
+## CS110 Final Project  << Spring, 2024 >>
 
 ## Team Members
-
-<< List team member names >>
 
 *** Sam Lin
 
 ## Project Description
 
-<< Give an overview of your project >>
+<< A one stage 2D pixel base street fighter game that you would see in a aracade back in the day. >>
 
-*** A 2D pixel base street fighter game that you would see in a aracade back in the day.
 
 ## GUI Design
+
 
 ### Initial Design
 
@@ -39,7 +37,9 @@
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+- << 
+Magic: two basic attacks
+Melee: physical type character with >>
 
 ## ATP
 
