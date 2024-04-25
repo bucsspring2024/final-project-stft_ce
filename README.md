@@ -30,10 +30,10 @@
 ### Features
 
 1. Count Down Before Games Begans
-2. moveable character
+2. Moveable character
 3. Health Bar
 4. Game-Over Screen
-5. Level Sound Track
+5. Ingame sound-track
 
 ### Classes
 

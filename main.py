@@ -1,6 +1,6 @@
 import pygame
 from pygame import mixer
-from Character import Character
+from Controller import Character
 
 mixer.init()
 pygame.init()
@@ -73,8 +73,8 @@ def draw_health_bar(health, x, y):
     pygame.draw.rect(screen, (216, 36, 41), (x, y, 400, 30))
     pygame.draw.rect(screen, (255, 255, 0), (x, y, 400 * ratio, 30))
 
-fighter_1 = Fighter(1, 200, 700, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_sd)
-fighter_2 = Fighter(2, 1500, 700, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_sd)
+fighter_1 = Character(1, 200, 700, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_sd)
+fighter_2 = Character(2, 1500, 700, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_sd)
 
 
 # Set up clock
