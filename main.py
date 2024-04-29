@@ -69,8 +69,8 @@ WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
 
 # Define font
-count_font = pygame.font.Font("assets/Font/Tejartchi.ttf", 80)
-score_font = pygame.font.Font("assets/Font/Tejartchi.ttf", 30)
+count_font = pygame.font.Font("assets/Font/Universidad 2015.ttf", 80)
+score_font = pygame.font.Font("assets/Font/Universidad 2015.ttf", 30)
 menu_font = pygame.font.Font(None, 36)
 
 # Initialize current_bg_index outside the loop
@@ -208,4 +208,3 @@ while run:
 
 # Exit pygame
 pygame.quit()
-
