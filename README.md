@@ -19,7 +19,7 @@
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui]("assets/gui.jpg")
 
 ### Final Design
 
@@ -43,6 +43,40 @@ Melee: physical type character with >>
 
 ## ATP
 
+Test Case 1: Character Movement
+Test Description: Verify that the character's movement is as expected.
+| Step                 |Procedure             |Expected Results                   |
+|----------------------|:--------------------:|----------------------------------:|
+|  1                   | Run Counter Program  |GUI window appears with count = 0  |
+|  2                   | click count button   | display changes to count = 1      |
+etc...
+
+Test Case 2: Collision Detection
+Test Description: Ensure collisions between the player's attacks are detected correctly.
+| Step                 |Procedure             |Expected Results                   |
+|----------------------|:--------------------:|----------------------------------:|
+|  1                   | Run Counter Program  |GUI window appears with count = 0  |
+|  2                   | click count button   | display changes to count = 1      |
+etc...
+
+Test Case 3: Game Over Condition
+Test Description: Confirm that the game ends after one of the two players wins three rounds.
+| Step                 |Procedure             |Expected Results                   |
+|----------------------|:--------------------:|----------------------------------:|
+|  1                   | Run Counter Program  |GUI window appears with count = 0  |
+|  2                   | click count button   | display changes to count = 1      |
+etc...
+
+Test Case 4: Music and In-Game Audio
+Test Description: Test the soundtrack and In-Game Audio to ensure they are functional.
+| Step                 |Procedure             |Expected Results                   |
+|----------------------|:--------------------:|----------------------------------:|
+|  1                   | Run Counter Program  |GUI window appears with count = 0  |
+|  2                   | click count button   | display changes to count = 1      |
+etc...
+
+Test Case 5: Error Handling
+Test Description: Verify that the program handles unexpected inputs gracefully.
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   | Run Counter Program  |GUI window appears with count = 0  |
