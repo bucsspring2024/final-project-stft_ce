@@ -1,6 +1,6 @@
 import pygame
 from pygame import mixer
-from Controller import Character
+from src.Controller import Character
 
 mixer.init()
 pygame.init()
@@ -64,13 +64,17 @@ wizard_sheet = pygame.image.load("assets/Evil Wizard (P2)/Sprites/wizard.png").c
 # Load victory image
 victory_img = pygame.image.load("assets/Screen Images/End.png").convert_alpha()
 
+#load volume node
+volume_wheel_img = pygame.image.load("assets/Screen Images/Mini sword .png").convert_alpha()
+volume_wheel_rect = volume_wheel_img.get_rect()
+
 # Define number of steps in each animation
 WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
 
 # Define font
-count_font = pygame.font.Font("assets/Font/Universidad 2015.ttf", 80)
-score_font = pygame.font.Font("assets/Font/Universidad 2015.ttf", 30)
+count_font = pygame.font.Font("assets/Font/Iceberg-Regular.ttf", 80)
+score_font = pygame.font.Font("assets/Font/Iceberg-Regular.ttf", 30)
 menu_font = pygame.font.Font(None, 36)
 
 # Initialize current_bg_index outside the loop
@@ -98,21 +102,37 @@ def start_menu():
     global current_bg_index  # Move the global declaration here
     menu = True
     volume_slider_pos = SCREEN_WIDTH // 2
+    menu_bg = pygame.image.load("assets/Screen Images/GUI_BG.jpg").convert_alpha()  # Load menu background image
+    start_menu_img = pygame.image.load("assets/Screen Images/Start Menu.png").convert_alpha()  # Load start menu image
+    start_menu_rect = start_menu_img.get_rect(topleft=(200, 200))  # Define start menu position
+
+    # Load button images
+    start_button_img = pygame.image.load("assets/Screen Images/start.png").convert_alpha()
+    quit_button_img = pygame.image.load("assets/Screen Images/exist.png").convert_alpha()
+
+    # Define button positions
+    start_button_rect = start_button_img.get_rect(topleft=(200, 540))
+    quit_button_rect = quit_button_img.get_rect(topleft=(475, 540))
+
     while menu:
         screen.fill((0, 0, 0))
-        draw_text("Start Menu", menu_font, WHITE, 360, 200)
+        screen.blit(menu_bg, (0, 0))  # Draw menu background image
+
+        # Draw start menu
+        screen.blit(start_menu_img, start_menu_rect)
 
         # Draw volume slider
         pygame.draw.line(screen, WHITE, (200, 400), (720, 400), 5)
-        pygame.draw.circle(screen, BLUE, (volume_slider_pos, 400), 10)
+        volume_slider_pos = max(200, min(720, volume_slider_pos))
 
-        # Draw start button
-        pygame.draw.rect(screen, (0, 255, 0), (350, 500, 200, 50))
-        draw_text("Start", menu_font, WHITE, 400, 510)
+        # Draw volume wheel image
+        volume_wheel_rect.centerx = volume_slider_pos
+        volume_wheel_rect.centery = 400
+        screen.blit(volume_wheel_img, volume_wheel_rect)
 
-        # Draw quit button
-        pygame.draw.rect(screen, (255, 0, 0), (350, 600, 200, 50))
-        draw_text("Quit", menu_font, WHITE, 400, 610)
+        # Draw buttons
+        screen.blit(start_button_img, start_button_rect)
+        screen.blit(quit_button_img, quit_button_rect)
 
         pygame.display.update()
 
@@ -122,22 +142,25 @@ def start_menu():
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
-                if 350 <= mouse_pos[0] <= 550 and 500 <= mouse_pos[1] <= 550:
+                # Check if the mouse clicks on the start button
+                if start_button_rect.collidepoint(mouse_pos):
                     menu = False
-                elif 350 <= mouse_pos[0] <= 550 and 600 <= mouse_pos[1] <= 650:
+                # Check if the mouse clicks on the quit button
+                elif quit_button_rect.collidepoint(mouse_pos):
                     pygame.quit()
                     quit()
             if event.type == pygame.MOUSEMOTION:
                 if event.buttons[0] == 1:  # Check left mouse button is pressed
                     if 200 <= event.pos[0] <= 720:
                         volume_slider_pos = event.pos[0]
-                        # Adjust volume based on slider position
-                        volume_level = (volume_slider_pos - 200) / 520  # Scale to range 0.0 to 1.0
+                        volume_level = (volume_slider_pos - 200) / 520
                         pygame.mixer.music.set_volume(volume_level)
 
+
+
 # Create two instances of fighters
-fighter_1 = Character(1, 200, 700, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
-fighter_2 = Character(2, 1500, 700, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
+fighter_1 = Character(1, 200, 400, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
+fighter_2 = Character(2, 1500, 400, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
 
 # Start menu
 start_menu()
@@ -189,14 +212,14 @@ while run:
             round_over_time = pygame.time.get_ticks()
     else:
         # Display victory image
-        screen.blit(victory_img, (830, 150))
+        screen.blit(victory_img, (730, 125))
         if pygame.time.get_ticks() - round_over_time > ROUND_OVER_COOLDOWN:
             round_over = False
             intro_count = 3
             # Change background after each round
             current_bg_index = (current_bg_index + 1) % len(bg_images)
             fighter_1 = Character(1, 200, 310, False, WARRIOR_DATA, warrior_sheet, WARRIOR_ANIMATION_STEPS, sword_fx)
-            fighter_2 = Character(2, 700, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
+            fighter_2 = Character(2, 1500, 310, True, WIZARD_DATA, wizard_sheet, WIZARD_ANIMATION_STEPS, magic_fx)
 
     # Event handler
     for event in pygame.event.get():
