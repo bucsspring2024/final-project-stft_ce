@@ -6,39 +6,33 @@
 ## CS110 Final Project  << Spring, 2024 >>
 
 ## Team Members
-
-*** Sam Lin
+     Sam Lin
 
 ## Project Description
 
-<< A one stage 2D pixel base street fighter game that you would see in a aracade back in the day. >>
+<< A three stage 2D pixel base street fighter game that you would see in a aracade back in the day. The game has a somewhat well design starter menu that allows the player to either begin the game or exit the application, the start menu also a volume slider that has a sword which can be slide to the left to decrease the volume of the music or to the right to increase it. After the entering the game there is a two second countdown before player drop to the ground and began the battle.>>
 
 
 ## GUI Design
 
-
 ### Initial Design
-
-![initial gui]("assets/gui.jpg")
+![initial gui]("assets/Inital_GUI.jpg")
 
 ### Final Design
-
-![final gui](assets/finalgui.jpg)
+![final gui]("assets/Final_GUI.png")
 
 ## Program Design
-
 ### Features
-
-1. Change maps every round ( up to three rounds)
-2. Moveable character
-3. Health Bar
-4. Game-Over/ Winner's Screen
-5. Ingame sound-track
+     1. Change maps every round (up to three rounds)
+     2. Moveable character, which runs turn there body based on the direct they run.
+     3. Health Bar that track damage taken
+     4. Internal systems to track scores and a winner's screen that appears after the match
+     5. Ingame sound-track, that can be lower or raised in the starter menu
 
 ### Classes
 
 - << 
-Magic: two basic attacks
+Evil Wizard: two basic attacks
 Melee: physical type character with >>
 
 ## ATP
