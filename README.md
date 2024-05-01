@@ -1,16 +1,17 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=14589309&assignment_repo_type=AssignmentRepo)
 
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << CS110 Project >>
-## CS110 Final Project  << Spring, 2024 >>
+# CS110 Project 
+  
+CS110 Final Project Spring, 2024
 
 ## Team Members
-     Sam Lin
+
+Sam Lin
 
 ## Project Description
 
-<< A three stage 2D pixel base street fighter game that you would see in a aracade back in the day. The game has a somewhat well design starter menu that allows the player to either begin the game or exit the application, the start menu also a volume slider that has a sword which can be slide to the left to decrease the volume of the music or to the right to increase it. After the entering the game there is a two second countdown before player drop to the ground and began the battle.>>
+A three stage 2D pixel base street fighter game that you would see in a aracade back in the day. The game has a somewhat well design starter menu that allows the player to either begin the game or exit the application, the start menu also a volume slider that has a sword which can be slide to the left to decrease the volume of the music or to the right to increase it. After the entering the game there is a two second countdown before player drop to the ground and began the battle.
 
 
 ## GUI Design
@@ -29,11 +30,11 @@
      4. Internal systems to track scores and a winner's screen that appears after the match
      5. Ingame sound-track, that can be lower or raised in the starter menu
 
-### Classes
+### Classes 
 
-- << 
-Evil Wizard: two basic attacks
-Melee: physical type character with >>
+ Evil Wizard: magic type character that is operated with the arrow keys and have it's basic attack as "numpad keys 1" and "numpad key 2"
+
+ Warrior: physical type character that has it's movement set as "wasd" and attacks as "r" and "t"
 
 ## ATP
 

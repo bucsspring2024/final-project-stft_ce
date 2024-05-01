@@ -35,7 +35,6 @@ class Character():
             animation_list.append(temp_img_list)
         return animation_list
 
-
     def move(self, screen_width, screen_height, surface, target, round_over):
         SPEED = 10
         GRAVITY = 2
